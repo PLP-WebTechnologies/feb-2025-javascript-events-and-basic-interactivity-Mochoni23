@@ -1,0 +1,376 @@
+:root {
+    --primary: #FF9AA2;
+    --secondary: #FFB7B2;
+    --accent: #FFDAC1;
+    --light: #E2F0CB;
+    --fresh: #B5EAD7;
+}
+
+body {
+    font-family: 'Comic Neue', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #FFF9FB;
+    color: #5E2B41;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--accent);
+    padding: 15px;
+    border-radius: 50px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+nav a {
+    color: #5E2B41;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+section {
+    padding: 30px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    border-bottom: 3px dotted var(--accent);
+    padding-bottom: 10px;
+}
+
+/* Button styles */
+.icecream-button {
+    background-color: var(--primary);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 5px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.icecream-button:hover {
+    background-color: var(--secondary);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.icecream-button:active {
+    transform: scale(0.98);
+}
+
+/* Image gallery */
+.flavor-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.flavor-gallery img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 3px solid var(--accent);
+}
+
+.flavor-gallery img:hover {
+    transform: scale(1.1);
+    z-index: 1;
+    border-color: var(--primary);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.featured-flavor {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: 5px solid white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    margin-bottom: -1px;
+    justify-content: center;
+}
+
+.tab-button {
+    padding: 12px 25px;
+    background: var(--accent);
+    border: none;
+    cursor: pointer;
+    border-radius: 15px 15px 0 0;
+    margin-right: 5px;
+    font-weight: bold;
+    color: #5E2B41;
+    transition: all 0.3s;
+}
+
+.tab-button.active {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+.tab-button:hover:not(.active) {
+    background: var(--light);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Accordion */
+.faq-item {
+    margin-bottom: 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.faq-header {
+    padding: 15px 20px;
+    background: var(--fresh);
+    color: #5E2B41;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-header:hover {
+    background: var(--light);
+}
+
+.faq-content {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: white;
+}
+
+.faq-content p {
+    padding: 20px 0;
+    margin: 0;
+}
+
+/* Form validation */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 154, 162, 0.2);
+}
+
+input.valid {
+    border-color: var(--fresh);
+}
+
+input.invalid {
+    border-color: var(--primary);
+}
+
+.error-message {
+    color: var(--primary);
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Specials banner */
+.specials-banner {
+    background: linear-gradient(135deg, var(--light), var(--fresh));
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.specials-banner h3 {
+    font-size: 1.8rem;
+    color: #5E2B41;
+    margin: 0;
+}
+
+.specials-banner p {
+    font-size: 1.2rem;
+    margin: 10px 0 0;
+}
+
+.icecream-icon {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.2;
+}
+
+/* Secret message */
+#secretMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 218, 193, 0.95);
+    color: #5E2B41;
+    padding: 30px;
+    border-radius: 20px;
+    display: none;
+    z-index: 100;
+    text-align: center;
+    max-width: 80%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 5px solid white;
+}
+
+#secretMessage h2 {
+    color: var(--primary);
+    margin-top: 0;
+    font-size: 2.5rem;
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    opacity: 0;
+    z-index: 99;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 20px 20px 0 0;
+    margin-top: 50px;
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px) scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2.5rem;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        width: 95%;
+    }
+    
+    nav a {
+        padding: 8px 15px;
+        margin: 5px;
+    }
+    
+    .flavor-gallery img {
+        width: 120px;
+        height: 120px;
+    }
+}
